@@ -6,7 +6,7 @@ Verified 2026-10-08; UIs change, so if a selector fails fall back to `find` plus
 - New chat: https://chat.qwen.ai/ . Chats are saved (/c/<id>); no temporary option found (an unlabeled icon at the top right showed no tooltip).
 - Composer: `textarea` (placeholder "Ask Qwen"). Insert with snippet C as is.
 - Send: JS click on `button[aria-label="Send"]`; while generating it reads "Stop".
-- Last answer: LAST in common.md 6; the "Thinking completed" header sits outside it.
+- Last answer: LAST in common.md 6; the "Thinking completed" header sits outside it. In a background tab the answer stopped updating at 384 of 712 characters (2026-10-09) while the stable-length check looked done: without an ALL DONE line, nudge the tab (common.md 2) and read again before treating it as cut off.
 - Mode: Qwen3.7-Plus (Oct 2026); left unchanged.
 - Meter: no published web cap found; it answered the test within seconds.
 

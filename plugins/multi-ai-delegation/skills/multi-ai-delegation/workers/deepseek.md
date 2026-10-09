@@ -6,7 +6,7 @@ Verified 2026-10-08; UIs change, so if a selector fails fall back to `find` plus
 - New chat: https://chat.deepseek.com/ . No temporary mode; chats are saved and auto-titled (/a/chat/s/<id>). While loading it briefly redirects to /sign_in: wait 3 s and check again.
 - Composer: `textarea` (placeholder "Message DeepSeek"). Insert with snippet C.
 - Send: left_click the textarea (find gives the ref), then key Return. Clicking the arrow button's ref did not send.
-- Last answer: LAST in common.md 6, the last `.ds-markdown` inside the last `.ds-message`; the earlier ones are the DeepThink trace, which is never read. Read with JS slices: get_page_text returns the whole body including the sidebar's chat titles.
+- Last answer: LAST in common.md 6, the last `.ds-assistant-message-main-content` (2026-10-09). The DeepThink trace is shown expanded above it in its own `.ds-markdown`: never read or save it. The chat is a virtual list: in a background tab it rendered no messages at all (`.ds-message` count 0), so nudge the tab (common.md 2) before deciding the selector broke. Read with JS slices: get_page_text returns the whole body including the sidebar's chat titles.
 - Toggles: DeepThink and Search (both were on in the test account); restore them at the end if you change them. With DeepThink on, wait until the header reads "Thought for N seconds" (common.md 4).
 - Meter: no published web cap; "server busy" under load; DeepThink is slower.
 

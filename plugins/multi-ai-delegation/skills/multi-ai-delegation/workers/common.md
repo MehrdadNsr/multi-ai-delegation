@@ -22,7 +22,7 @@ Read before driving any site or launching subagents; then read only the workers/
 - Some editors apply a paste event a moment later (Perplexity, Kimi). Wait 1-2 s before reading back, and never insert again because the first read looked empty: Perplexity ended up with the prompt twice.
 - If the value setter fills a textarea but its send or insert button stays disabled (Gemini Notebook, ElevenLabs), the app did not register the text: clear the textarea and use snippet F.
 - Clearing a contenteditable composer: JS selectAll + delete and the Delete key failed on Perplexity; click the composer, press select-all (cmd+a on macOS, ctrl+a elsewhere; the profile's computer notes), then BackSpace. Drafts can survive navigation, so check the composer is empty before inserting.
-- Hidden tabs slow some apps down: AI Studio's typing animation crawled while its tab was in the background (about 15 s for two lines), and Grok's answer did not render at all until screenshots were taken (2026-10-09). A 0.3-scale screenshot nudges it, and the stable-length check must not end the wait early; for long runs ask the user to keep the Chrome window visible.
+- Background tabs throttle rendering on most sites: AI Studio's typing crawled (about 15 s for two lines); Grok's answer rendered only once screenshots were taken (confirmed twice, 2026-10-09); DeepSeek's virtual list showed no messages; Qwen's answer froze at about half its length. Rule: when the LAST element is missing, or its length is stable without the end line, take a 0.2-scale screenshot of that tab (it paints the page), wait 2 s and read again; only after two nudges treat it as a broken selector or a cut-off answer. For long runs ask the user to keep the Chrome window visible.
 - File upload (tested 2026-10-08): the tool's own description allows attachments, the session's outputs and uploads folders and connected folders, at most 10 MB per call. In the test a file in Claude's working directory (pwd) uploaded while an outputs-folder path was refused ("only files this session is allowed to read can be uploaded"), so stage files in the working directory. Get the page's hidden file input with find (ChatGPT: "Attach files"; AI Studio: the input whose accept starts with "text/*") and pass that ref; never click the attach button, which opens the system file dialog. ChatGPT: the file chip appeared and the model quoted the file exactly. AI Studio: the file was taken, but Run opened a one-time "Start creating with media in Google AI Studio" terms dialog; Claude cancelled it (accepting terms is the user's call) and the prompt ran without the file. Upload only files the approved plan or the user's own request names and the privacy rules allow; otherwise the user attaches them.
 
 ## 3. Per-task loop
@@ -90,13 +90,13 @@ return JSON.stringify({len: ta.value.length, tail: ta.value.slice(-60)}); })()
 ## 6. LAST expressions
 - ChatGPT: `[...document.querySelectorAll('[data-chatgpt-selection-message-id]')].at(-1)`
 - Grok: `[...document.querySelectorAll('[data-testid="assistant-message"]')].at(-1)`
-- DeepSeek: `[...([...document.querySelectorAll('.ds-message')].at(-1)?.querySelectorAll('.ds-markdown') || [])].at(-1)`
+- DeepSeek: `[...document.querySelectorAll('.ds-assistant-message-main-content')].at(-1)` (2026-10-09; the answer's .ds-markdown, which skips the visible thinking trace; the chat is a virtual list that may render nothing in a background tab, see 2)
 - Gemini: `[...document.querySelectorAll('model-response message-content')].at(-1)`
 - AI Studio: `[...document.querySelectorAll('ms-chat-turn')].at(-1)?.querySelector('[class*="turn-content"]')`
 - Gemini Notebook: `[...document.querySelectorAll('.message-content .message-text-content')].at(-1)`
 - Perplexity: `[...document.querySelectorAll('.prose')].at(-1)`
 - Kimi: `[...([...document.querySelectorAll('.chat-content-item-assistant')].at(-1)?.querySelectorAll('[class*="markdown"]') || [])].at(-1)`
-- Qwen: `[...document.querySelectorAll('.response-message-content')].at(-1)`
+- Qwen: `[...document.querySelectorAll('.qwen-chat-message-assistant .response-message-content')].at(-1)` (2026-10-09; in a background tab it can stop updating mid-answer, see 2)
 - OpenRouter: not established (workers/openrouter.md).
 
 ## 7. Answer parser (qc.md 1)
@@ -137,6 +137,7 @@ def parse_chunk(raw, header, valid_ids, id_re=r'[A-Za-z]*\d+'):
 | "You've reached your limit" or a usage cap | stop that site for this run, re-route its chunks (lifecycle.md 11), report the reset time it shows |
 | "Insufficient credits", credits used up | stop that site; never buy or top up; re-route (lifecycle.md 11) or report |
 | "Something went wrong", network error, "server busy" | wait 30 s, use the site's Retry / Regenerate once, then re-route (lifecycle.md 11) |
+| Kimi: a Tips dialog saying too many people are chatting with Kimi (the prompt is not processed) | click its "Got it" (find), never Upgrade; wait 60 s and send once more; busy again: re-route (lifecycle.md 11) and report it |
 | A free model errors or answers nothing (OpenRouter) | try one other free model; then re-route (lifecycle.md 11) |
 | Higgsfield generation failed | check the job's status first; retry once only when it clearly failed; if the retry fails, stop and report the error and the credits spent |
 | A subagent errors or writes no output | one replacement agent for that chunk (not an extra one); then Claude takes it back or re-routes it (lifecycle.md 11) |

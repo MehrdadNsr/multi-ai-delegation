@@ -8,6 +8,7 @@ Verified 2026-10-08; UIs change, so if a selector fails fall back to `find` plus
 - Send: `.send-button-container` carries the class "disabled" while empty; dispatch a click on its inner svg: `(() => { const s = document.querySelector('.send-button-container'); if (!s || /disabled/.test(s.className)) return 'NOT_READY'; (s.querySelector('svg, button, div') || s).dispatchEvent(new MouseEvent('click', {bubbles: true})); return 'clicked'; })()`. While generating, its classes read "send-button-container disabled stop".
 - Last answer: LAST in common.md 6, the last markdown block inside the last assistant item; the earlier ones are the "Thinking complete" trace, which is never read.
 - Mode: the model label by the composer read "K3" ("K3" and "High" on 2026-10-09); left unchanged.
-- Meter: no published web cap found; it answered the test within seconds.
+- Busy: under load a Tips dialog says too many people are chatting with Kimi and the prompt is dropped (twice on 2026-10-09). Click "Got it", never Upgrade; then the busy row in common.md 8.
+- Meter: no published web cap found; it answered the first test within seconds.
 
 _multi-ai-delegation · designed by Mehrdadnsr_
