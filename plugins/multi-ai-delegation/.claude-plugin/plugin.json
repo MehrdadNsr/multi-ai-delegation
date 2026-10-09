@@ -10,6 +10,7 @@
   "homepage": "https://github.com/Mehrdadnsr/multi-ai-delegation",
   "repository": "https://github.com/Mehrdadnsr/multi-ai-delegation",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/MehrdadNsr/multi-ai-delegation/blob/main/PRIVACY.md",
   "keywords": [
     "delegation",
     "multi-agent",
