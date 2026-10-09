@@ -105,7 +105,7 @@ To uninstall: on claude.ai or desktop, open the plugin in **Customize > Plugins*
 
 ## Privacy
 
-Every delegated chat is saved in that site's history: the skill never uses temporary or private chats, so runs can be checked and resumed. Those chats fall under each site's terms and your settings there, which may allow training or memory of past chats. The skill sends nothing to the author and fetches no remote instructions.
+Every delegated chat is saved in that site's history: the skill never uses temporary or private chats, so runs can be checked and resumed. Those chats fall under each site's terms and your settings there, which may allow training or memory of past chats. The skill sends nothing to the author and fetches no remote instructions. Full details: [Privacy policy](PRIVACY.md).
 
 ## Honest caveat
 
