@@ -1,0 +1,21 @@
+{
+  "name": "multi-ai-delegation",
+  "displayName": "Multi-AI Delegation",
+  "version": "5.3.0",
+  "description": "Load only when the user explicitly asks to split, offload or route work to their other AIs (ChatGPT, Grok, Gemini, Suno, Higgsfield...) or asks for a cross-model check, or after Claude asked in one short line and the user said yes. Never read this skill to decide. Offer it only when it clearly pays off (very large material, a capability Claude lacks here, or a high-stakes second opinion). A direct request naming one tool is not delegation; do it directly, without this skill.",
+  "author": {
+    "name": "Mehrdadnsr",
+    "url": "https://github.com/Mehrdadnsr"
+  },
+  "homepage": "https://github.com/Mehrdadnsr/multi-ai-delegation",
+  "repository": "https://github.com/Mehrdadnsr/multi-ai-delegation",
+  "license": "MIT",
+  "keywords": [
+    "delegation",
+    "multi-agent",
+    "orchestration",
+    "claude-in-chrome",
+    "automation",
+    "browser-automation"
+  ]
+}
