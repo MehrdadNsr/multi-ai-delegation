@@ -4,7 +4,7 @@ description: Load only when the user explicitly asks to split, offload or route 
 ---
 
 # Multi-AI delegation
-v5.3.0 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
+v5.3.1 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
 
 ## 0. When to load
 - Load only when (a) the user explicitly asks to split, offload or route work to their other AIs, or asks for a cross-model check, or (b) Claude first asked in one short line and the user said yes.
