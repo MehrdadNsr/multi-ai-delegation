@@ -1,6 +1,6 @@
 # multi-ai-delegation
 
-A Claude skill, packaged as a plugin, that lets Claude split big jobs across your other AI chat sites and tools: ChatGPT, Grok, Gemini, Google AI Studio, Gemini Notebook (NotebookLM), Perplexity, DeepSeek, Kimi, Qwen and OpenRouter, plus Suno, ElevenLabs and Higgsfield for media. Claude drives the sites in your own browser through the Claude in Chrome extension. Nothing is sent until you approve a plan that shows which site gets what, at what cost and how long it will take.
+A Claude skill, packaged as a plugin, that lets Claude split big jobs across your other AI chat sites and tools: ChatGPT, Grok, Gemini, Google AI Studio, Gemini Notebook (NotebookLM), Perplexity, DeepSeek, Kimi, Qwen, Microsoft Copilot (new, untested) and OpenRouter, plus Suno, ElevenLabs and Higgsfield for media. Claude drives the sites in your own browser through the Claude in Chrome extension. Nothing is sent until you approve a plan that shows which site gets what, at what cost and how long it will take.
 
 **Status: beta.** Tested on one account in October 2026; see [Status](#status).
 
@@ -88,6 +88,7 @@ Say these in any language.
 ## Safety rules in brief
 
 - Nothing goes to any site or subagent before you approve the plan; silence is not a go. "stop" halts everything.
+- Careful mode, on by default: at most 25 prompts a site a day (12 on Google's services), 20 s apart, one chat per site at a time, and a 24-hour pause on any site that shows a CAPTCHA or an "unusual activity" warning. These are the skill's own limits; no site publishes a safe rate.
 - Claude never types passwords, solves CAPTCHAs, creates accounts, accepts terms, changes account settings, deletes chats, downloads files, or buys, tops up or upgrades anything.
 - Credits are spent only after your explicit yes, or within your threshold for a tool you name yourself, with the meter read before and after.
 - Personal data goes only to a service you name for it; none goes to free services whose terms allow training on prompts or that sit under Chinese jurisdiction unless you say so.
