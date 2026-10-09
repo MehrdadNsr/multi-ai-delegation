@@ -1,0 +1,25 @@
+{
+  "name": "multi-ai-delegation",
+  "description": "Marketplace for multi-ai-delegation, a Claude skill that splits big jobs across your other AI chat sites through Claude in Chrome.",
+  "owner": {
+    "name": "Mehrdadnsr",
+    "url": "https://github.com/Mehrdadnsr"
+  },
+  "plugins": [
+    {
+      "name": "multi-ai-delegation",
+      "source": "./plugins/multi-ai-delegation",
+      "description": "Split big jobs across your other AI chat sites (ChatGPT, Grok, Gemini, DeepSeek and more) through Claude in Chrome, behind a plan you approve first.",
+      "category": "productivity",
+      "tags": [
+        "delegation",
+        "multi-agent",
+        "automation",
+        "claude-in-chrome",
+        "chatgpt",
+        "gemini",
+        "grok"
+      ]
+    }
+  ]
+}
