@@ -17,6 +17,8 @@ Read before relying on a site or feature listed here. After every run, report wh
 - Run state: mirroring the run folder to a connected folder is untested (on 2026-10-09 a computer was linked with no folder connected), including whether device_commit_files overwrites the ledger without force; the memory run status and a resume from a new chat are untested; the outputs folder surviving a container restart was seen once.
 - Pilot size (about 5%, at least 10) and the time rules of thumb are uncalibrated: log real pilots and durations in limits.md.
 - New on 2026-10-09 and untested until a real run: canary items, the worker scorecard, recipes, the review chain, the challenge pass, the kill switch, the fresh-chat retry, plan-only mode. Tested that day: the extension check, the status command (all 13 workers signed in) and a two-worker council (ChatGPT for, Grok against).
+- Copilot (added 2026-10-09): untested; no selectors yet; on one account copilot.microsoft.com redirected to an employer's sign-in, so it needs a personal Microsoft account signed in first.
+- Careful-mode caps (2026-10-09) are guesses, not measured limits; no site publishes one.
 - Meters not found on the chat pages in the status test: Grok's weekly % meter and Gemini's usage limits (Settings, Usage limits); their exact locations are unconfirmed.
 - Public release (2026-10-09), untested until real use: the first-run setup, the profile in ~/.claude/ai-delegation-profile.md, state under ./ai-runs/, the what's-new line and the test command; nothing has been tested in Claude Code yet.
 - Google sign-in assist (added 2026-10-09): untested until a real run, including each site's Google button, the account chooser, the "Continue as" confirmation and the return to the site.

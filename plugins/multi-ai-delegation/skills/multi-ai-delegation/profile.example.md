@@ -36,6 +36,8 @@ A template for your own profile. Fill in what applies and keep your copy in your
 
 <!-- The most a paid tool you name yourself ("make this in Suno") may spend without asking; above it, Claude asks first. Blank = always ask. Example: 100 credits or USD 2. -->
 - Own-pick threshold:
+<!-- Careful mode caps (SKILL.md 2.9). Blank = the defaults: 25 prompts a site a day, 20 s apart, one chat per site at a time; Google services 12 a day. Raise them only knowingly: sites may suspend accounts for automated use. -->
+- Careful mode caps:
 <!-- Optional notes per service: a preferred first route, a plan quirk, the domain that works for you (e.g. "Kimi: signed in on www.kimi.ai"). -->
 - Notes:
 

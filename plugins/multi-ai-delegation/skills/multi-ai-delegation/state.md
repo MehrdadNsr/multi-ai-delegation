@@ -14,6 +14,7 @@ One row per chunk attempt: run, chunk, ids, site, tier, mode, chat URL or job id
 
 ## 3. Run status (memory, or ./ai-runs/status.md)
 One paragraph per run: with a memory tool, in the memory file of the project the run serves (its /areas/ file) or in /areas/ai-runs.md, which also holds the welcome flag; with no memory tool, in ./ai-runs/status.md. It gives the run id and date, the approved plan in one line, chunks verified, chunks pending (site and chat URL each), where the files are, the next step. Replace that run's previous paragraph rather than appending; at the end shrink it to one line (done, where the report and files are). Memory rules apply (read first, version token, privacy): ids, counts, URLs and paths only, never content from the material. No store works or a write fails: say so and carry on.
+- Daily site counts (careful mode, SKILL.md 2.9): in the same store, one line per day, e.g. "2026-10-09 counts: chatgpt 6, grok 6, copilot 1"; add each prompt sent (continues and retries too), start a new line each day and drop lines older than a week. Read it before filling the plan.
 
 ## 4. Recipes
 - When: after a job type succeeds once (all checks passed and the user accepted the result), save it as a recipe.

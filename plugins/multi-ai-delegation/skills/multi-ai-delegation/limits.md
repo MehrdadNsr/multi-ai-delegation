@@ -5,6 +5,9 @@ Read when filling the plan table (lifecycle.md 3.3-3.4). Every figure here is da
 ## Prompt sizing (2026-10-08)
 Size each prompt for the worker's window (rough, unverified for 2026): ChatGPT Plus default model up to about 40k characters of input per prompt (its chat window is reportedly ~32K tokens); Grok and DeepSeek up to about 80k; Gemini and AI Studio far more (AI Studio keeps a running token count by the composer); Kimi and Qwen untested beyond a tiny prompt. Missing ids in the output are the sign a prompt was too big; qc.md 1 catches it.
 
+## Careful-mode caps (self-imposed, 2026-10-09)
+No site publishes a rate that is safe from suspension; the caps in SKILL.md 2.9 are the skill's own, chosen to stay near one person's manual use. They sit below most plans' quotas, so in practice the careful-mode cap, not the quota, limits a run. Log any warning or suspension a site shows in the calibration log, dated.
+
 ## Quota resets (2026-10-09)
 Take reset times from each site's live meter, not from fixed cycles, and spread big runs across the windows the meters show (lifecycle.md 3.3):
 - Gemini: officially refreshes every 5 hours up to a weekly cap.

@@ -4,7 +4,7 @@ description: Load only when the user explicitly asks to split, offload or route 
 ---
 
 # Multi-AI delegation
-v5.3.1 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
+v5.4.0 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
 
 ## 0. When to load
 - Load only when (a) the user explicitly asks to split, offload or route work to their other AIs, or asks for a cross-model check, or (b) Claude first asked in one short line and the user said yes.
@@ -103,5 +103,14 @@ After every run, in the user's language (details: lifecycle.md 9): who did what;
 - Estimate from Claude's measured pace, not a person's: writing or restructuring files about 8-10k characters a minute; scripted checks about 5 min; on a known site about 30 s per status check and 2-3 min per prompt round; a new or failing site 5-10 min. Add a 1.3-1.5x buffer, never 3-4x. Worker times: lifecycle.md 3.4; observed runs: limits.md.
 - These figures were measured on one model and one account (Oct 2026); other models and setups run at other speeds, so the rescale rule matters more than the starting figures: after each step, and after the pilot, rescale the remaining estimate by actual/estimated so far and tell the user the new figure.
 - For any run with 3 or more steps, announce the step count and the estimate up front, then after each step send one line, in the user's language: "Step k/n done: WHAT; about X min left" (through the app's message-to-user tool when it has one, so the line is shown as written).
+
+### 2.9 Careful mode (account safety; on by default)
+Automating a chat site's web interface can break that site's terms (OpenAI's, for one, forbid extracting output "automatically or programmatically"), and sites can suspend accounts without notice. No site publishes a safe rate, so these caps are self-imposed, to keep use close to what one person does by hand:
+- Per site, at most 25 prompts a day (pilot, continues and retries included), at least 20 s between two prompts to the same site, and one open chat at a time on each site; run sites in parallel with each other, never several chats inside one site.
+- Google's services (Gemini, AI Studio, Gemini Notebook) sit on the user's main Google account, so half the cap: 12 prompts a day each.
+- No run keeps one site busy for more than about 2 hours straight; split longer jobs across days.
+- Never use delegated output to build a dataset for training models.
+- A CAPTCHA, "verify you are human", "unusual activity" or rate-limit warning: stop that site for 24 hours and tell the user (lifecycle.md 11).
+- Over a cap: the plan moves the excess to another site, to Claude subagents (Tier 0b), to the official API if the user has one, or to another day, and says which. Daily counts: state.md 3. The user may set other caps in the profile (0.2); a higher cap is the user's informed choice, so the plan names the cap in force.
 
 _multi-ai-delegation · designed by Mehrdadnsr_
