@@ -98,6 +98,7 @@ return JSON.stringify({len: ta.value.length, tail: ta.value.slice(-60)}); })()
 - Kimi: `[...([...document.querySelectorAll('.chat-content-item-assistant')].at(-1)?.querySelectorAll('[class*="markdown"]') || [])].at(-1)`
 - Qwen: `[...document.querySelectorAll('.qwen-chat-message-assistant .response-message-content')].at(-1)` (2026-10-09; in a background tab it can stop updating mid-answer, see 2)
 - OpenRouter: not established (workers/openrouter.md).
+- Copilot: not established (workers/copilot.md; added 2026-10-09, untested).
 
 ## 7. Answer parser (qc.md 1)
 Parser for raw get_page_text output or JS slices (tested 2026-10-08 on a simulated page with prompt echo, UI labels, a continue turn, repeated headers, quoted commas, escaped quotes and suggestion chips). Set id_re to the id style in use; the default accepts L0001 and native numeric ids:
@@ -142,7 +143,8 @@ def parse_chunk(raw, header, valid_ids, id_re=r'[A-Za-z]*\d+'):
 | Higgsfield generation failed | check the job's status first; retry once only when it clearly failed; if the retry fails, stop and report the error and the credits spent |
 | A subagent errors or writes no output | one replacement agent for that chunk (not an extra one); then Claude takes it back or re-routes it (lifecycle.md 11) |
 | The workspace was wiped mid-run | resume from the ledger or the run status (11); read lost answers again from the saved chats |
-| CAPTCHA or "verify you are human" | stop; the user solves it; never attempt it |
+| CAPTCHA or "verify you are human" | stop; the user solves it; never attempt it; careful mode pauses that site for 24 hours (SKILL.md 2.9) |
+| "Unusual activity", "too many requests", a rate-limit warning | stop that site for 24 hours (SKILL.md 2.9), re-route its chunks (lifecycle.md 11) and tell the user |
 | Answer cut off, no ALL DONE line | continue protocol (modes/run.md 3), then smaller chunks |
 | Refusal or format drift | resend once with the OUTPUT block repeated at the end; failed twice: a fresh chat with a learned rule (modes/run.md 3); then re-route (lifecycle.md 11) |
 | Extension not connected, tab invalid | tabs_context_mcp once; then the setup steps (lifecycle.md 1), with Relay mode (9) meanwhile |
