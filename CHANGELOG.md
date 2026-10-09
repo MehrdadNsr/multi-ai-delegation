@@ -10,5 +10,6 @@ One line per version, newest last; dates in UTC. Add a line here, and in the rep
 - v5.1 (2026-10-09): time estimates from Claude's measured pace (SKILL.md 2.8).
 - v5.2 (2026-10-09): English description under 500 characters, version and attribution lines, this changelog, a one-time welcome and the "about" command, the Google sign-in assist.
 - v5.3.0 (2026-10-09): public release: English only; the profile and run state in the user's own storage (memory, a local file, or pasted); a first-run setup of up to 6 questions; plugin marketplace packaging with automatic updates; the "Step k/n done" progress line; a one-line "what's new" after an update; the "test" command.
+- v5.3.1 (2026-10-09): fixes from the first live run: AI Studio's temporary-chat check reads the page, not the heading; new DeepSeek and Qwen answer selectors; a background-tab nudge rule for all sites; Kimi's busy dialog in the recovery table.
 
 _multi-ai-delegation · designed by Mehrdadnsr_
