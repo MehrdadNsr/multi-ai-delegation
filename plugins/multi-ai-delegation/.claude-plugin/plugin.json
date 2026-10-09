@@ -2,7 +2,7 @@
   "name": "multi-ai-delegation",
   "displayName": "Multi-AI Delegation",
   "version": "5.3.0",
-  "description": "Load only when the user explicitly asks to split, offload or route work to their other AIs (ChatGPT, Grok, Gemini, Suno, Higgsfield...) or asks for a cross-model check, or after Claude asked in one short line and the user said yes. Never read this skill to decide. Offer it only when it clearly pays off (very large material, a capability Claude lacks here, or a high-stakes second opinion). A direct request naming one tool is not delegation; do it directly, without this skill.",
+  "description": "Split big jobs across your other AI chat sites (ChatGPT, Grok, Gemini, DeepSeek, Kimi, Qwen, Perplexity) through Claude in Chrome. Claude shows a plan with sites, cost and time and waits for your go, then pilots, runs the chunks in parallel, checks the answers and merges them. Also: a council of models, cross-model reviews, and media jobs with a cost quote first.",
   "author": {
     "name": "Mehrdadnsr",
     "url": "https://github.com/Mehrdadnsr"
