@@ -1,8 +1,8 @@
 {
   "name": "multi-ai-delegation",
   "displayName": "Multi-AI Delegation",
-  "version": "5.3.1",
-  "description": "Split big jobs across your other AI chat sites (ChatGPT, Grok, Gemini, DeepSeek, Kimi, Qwen, Perplexity) through Claude in Chrome. Claude shows a plan with sites, cost and time and waits for your go, then pilots, runs the chunks in parallel, checks the answers and merges them. Also: a council of models, cross-model reviews, and media jobs with a cost quote first.",
+  "version": "5.4.0",
+  "description": "Split big jobs across your other AI chat sites (ChatGPT, Grok, Gemini, DeepSeek, Kimi, Qwen, Perplexity, Copilot) through Claude in Chrome. Claude shows a plan with sites, cost and time and waits for your go, then pilots, runs the chunks in parallel, checks the answers and merges them. Also: a council of models, cross-model reviews, and media jobs with a cost quote first.",
   "author": {
     "name": "Mehrdadnsr",
     "url": "https://github.com/Mehrdadnsr"
