@@ -150,6 +150,7 @@ When the same chunk failed twice, the new saved chat gets the original prompt pl
 
 ## 10. Prompt hygiene
 Send only what the sub-task needs; never paste the user's memory, profile or other conversations into a worker prompt.
+Neutral framing (SKILL.md 2.10) for templates 5-8: the CONTEXT line carries facts, never a preference; the candidate or conclusion goes in the fences with its author hidden; the ANGLE or STANCE line is the only steer, and the report names it. Leave out which answer the user or Claude favours, why, and what result would be welcome.
 
 ## 11. Test canary (modes/test.md)
 One per site, in a new saved chat. Expected answer: `Au | 366`, then the ALL DONE line.

@@ -26,6 +26,7 @@ Fail: re-ask that chunk once, naming the problem; a second failure gets a fresh 
 - When a model judges: give it the source and the candidate in spotlighting fences (templates.md 2), hide which model wrote what, swap the order in pairwise comparisons, use a coarse scale (pass/fail or 1-4), and require a source id behind every verdict. Judges favour their own family, the first position and longer answers, so never let a family be the only judge of its own output, and that includes Claude, or its subagents, judging Claude.
 - Reasoning that sounds right but cannot be traced to the source is unverified: quarantine it rather than averaging it in.
 - A high-stakes conclusion, Claude's own included, also gets a challenge pass before it is accepted (modes/review.md 2).
+- A check is independent only if its prompt was neutral (SKILL.md 2.10): a worker that agreed with a conclusion its prompt already favoured counts as no check at all, and the report says so rather than listing it as verification.
 
 ## 5. Merge
 - Combine in id order; dedupe on source_id plus the key fields; drop the canary rows; add provenance columns (worker, chunk, verified yes/no).

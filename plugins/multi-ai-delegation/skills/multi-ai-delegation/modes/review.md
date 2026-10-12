@@ -13,5 +13,6 @@ Before accepting it, a worker from another family argues against it (templates.m
 ## 3. Second opinion and checking
 - Second opinion, judge or devil's advocate on a plan, draft or idea: templates.md 5. Grok is a good contrarian but tends to mirror the framing it is given.
 - A worker as checker of claims or rows against a source: templates.md 4; judge rules: qc.md 4.
+- Every prompt in this mode follows neutral framing (SKILL.md 2.10): no preferred answer in the prompt, the author hidden, the angle named in the report. When the user disputes a conclusion, revisit its evidence; never recruit another worker's agreement to settle it.
 
 _multi-ai-delegation · designed by Mehrdadnsr_

@@ -12,5 +12,6 @@ One line per version, newest last; dates in UTC. Add a line here, and in the rep
 - v5.3.0 (2026-10-09): public release: English only; the profile and run state in the user's own storage (memory, a local file, or pasted); a first-run setup of up to 6 questions; plugin marketplace packaging with automatic updates; the "Step k/n done" progress line; a one-line "what's new" after an update; the "test" command.
 - v5.3.1 (2026-10-09): fixes from the first live run: AI Studio's temporary-chat check reads the page, not the heading; new DeepSeek and Qwen answer selectors; a background-tab nudge rule for all sites; Kimi's busy dialog in the recovery table.
 - v5.4.0 (2026-10-09): careful mode for account safety (daily caps per site, spacing, one chat per site, a 24-hour pause on warnings, daily counts in the run status); Microsoft Copilot added as a worker (untested; personal accounts only).
+- v5.5.0 (2026-10-12): neutral framing for second opinions, councils, reviews and challenge passes (SKILL.md 2.10): no preferred answer in the prompt, the author hidden, the angle or stance named in the report; agreement with a framed prompt is not an independent check (qc.md 4); a disputed conclusion is settled against the evidence, never by recruiting more workers.
 
 _multi-ai-delegation · designed by Mehrdadnsr_

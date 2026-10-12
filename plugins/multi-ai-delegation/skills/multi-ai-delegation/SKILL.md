@@ -4,7 +4,7 @@ description: Load only when the user explicitly asks to split, offload or route 
 ---
 
 # Multi-AI delegation
-v5.4.0 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
+v5.5.0 · designed by Mehrdadnsr · github.com/Mehrdadnsr/multi-ai-delegation
 
 ## 0. When to load
 - Load only when (a) the user explicitly asks to split, offload or route work to their other AIs, or asks for a cross-model check, or (b) Claude first asked in one short line and the user said yes.
@@ -97,7 +97,7 @@ A Tier 3 site Claude proposes runs only after the user's explicit yes, whatever 
 - Keep the attribution lines (the version line under the title here, and the last line of every file) when copying or adapting the skill.
 
 ### 2.7 Reporting
-After every run, in the user's language (details: lifecycle.md 9): who did what; pilot results; spend; changes from the plan; what was verified and how (spot-checks, canaries, cross-model checks, challenge pass) and what was not; chats left in each site's history with run tags and URLs (Claude deletes none); where the files are; one next step.
+After every run, in the user's language (details: lifecycle.md 9): who did what; pilot results; spend; changes from the plan; what was verified and how (spot-checks, canaries, cross-model checks, challenge pass) and what was not; for second opinions, councils, reviews and challenge passes, the angle, stance or framing each worker got (2.10); chats left in each site's history with run tags and URLs (Claude deletes none); where the files are; one next step.
 
 ### 2.8 Time estimates and progress
 - Estimate from Claude's measured pace, not a person's: writing or restructuring files about 8-10k characters a minute; scripted checks about 5 min; on a known site about 30 s per status check and 2-3 min per prompt round; a new or failing site 5-10 min. Add a 1.3-1.5x buffer, never 3-4x. Worker times: lifecycle.md 3.4; observed runs: limits.md.
@@ -112,5 +112,11 @@ Automating a chat site's web interface can break that site's terms (OpenAI's, fo
 - Never use delegated output to build a dataset for training models.
 - A CAPTCHA, "verify you are human", "unusual activity" or rate-limit warning: stop that site for 24 hours and tell the user (lifecycle.md 11).
 - Over a cap: the plan moves the excess to another site, to Claude subagents (Tier 0b), to the official API if the user has one, or to another day, and says which. Daily counts: state.md 3. The user may set other caps in the profile (0.2); a higher cap is the user's informed choice, so the plan names the cap in force.
+
+### 2.10 Neutral framing (second opinions, councils, reviews, challenge passes)
+A worker's view is only as independent as the prompt that asked for it. Workers mirror the framing they are given (Grok visibly so), so a prompt that leans toward an answer mostly gets that answer back.
+- Give such a worker the neutral task and the material, with any candidate inside spotlighting fences as data and its author hidden (templates.md 2). Never say which answer the user or Claude prefers, the reasoning behind that preference, or what result would be welcome. The only steer is the template's ANGLE or STANCE line (templates.md 5-8); a steer the user asked for ("argue against it") is one too, and the report names it.
+- Agreement with a prompt that already favoured a conclusion is not independent validation; one worker's agreement is not a verdict. A disputed conclusion stays open to the user's objections and is decided against the evidence (qc.md 4), never by adding workers until one agrees.
+- The report (2.7) says what each such worker got beyond the material: the angle or stance, and any context that could have pulled the answer; and it reports the disagreements as fully as the agreements.
 
 _multi-ai-delegation · designed by Mehrdadnsr_
